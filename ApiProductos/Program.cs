@@ -1,5 +1,7 @@
-using ApiProductos.Data;
+using ApiProductos.Infraestructura.Data;
+using ApiProductos.Infraestructura.Repositories;
 using ApiProductos.Middlewares;
+using ApiProductos.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// inyecciones por medio de la interfaz
+builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped<IProductoService, ProductoService>();
+
 
 var app = builder.Build();
 

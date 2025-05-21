@@ -1,4 +1,4 @@
-﻿namespace ApiProductos.Data
+﻿namespace ApiProductos.Infraestructura.Data
 {
     using ApiProductos.Models;
     using Microsoft.EntityFrameworkCore;
